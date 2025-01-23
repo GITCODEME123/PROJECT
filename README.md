@@ -2,7 +2,7 @@
 To install the project dependencies, follow these steps:  
 
 1. Navigate to the project directory:  
-   `cd path/to/project4`  
+   `cd "path to project"`  
 
 2. Install the dependencies:  
    `pip install -e ".[dev]"`  
