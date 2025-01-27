@@ -10,6 +10,12 @@ def compare_groups(df, metric):
         pd.DataFrame: A DataFrame containing the mean, min, max, and median values
                       of the metric for each group.
     """
+    if df.empty:
+        raise ValueError("The input DataFrame is empty. Please provide a valid DataFrame.")
+    
+    if metric not in df.columns:
+        raise KeyError(f"The specified column '{metric}' does not exist in the DataFrame.")
+    
     print(f"Comparing groups for {metric}")
     # Group the DataFrame by the "Group" column and calculate statistical metrics
     group_comparison = df.groupby("Group")[metric].agg(["mean", "min", "max", "median"])
