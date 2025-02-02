@@ -87,6 +87,8 @@ def visualize_analysis_results(save_dir, metrics):
             # Create a bar chart for the comparison results
             plt.figure(figsize=(10, 6))
             df_stats.plot(kind="bar")
+            plt.legend(title="Metrics", loc="upper left", bbox_to_anchor=(1, 1))
+
             plt.title(f"Comparison Results for {metric}")
             plt.xlabel("Group")
             plt.ylabel("Values")
